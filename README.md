@@ -195,4 +195,3 @@ docker compose run angular-lint
   ```sh
   docker logs <container-name>
   ```
-- The **backend must be accessible via **`` because the frontend environment is configured to communicate with it.
