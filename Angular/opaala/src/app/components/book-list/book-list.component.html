@@ -1,0 +1,11 @@
+<div class="book-list">
+    <h1>{{bookList().name}}</h1>
+    
+    <ul class="book-grid">
+        @for (book of books(); track $index) {
+            <li>
+                <app-book-item (remove)="remove(book)"  [isDeleteFromListEnable]="true" [listSlug]="listSlug" [book]="book"></app-book-item>
+            </li>
+        }
+    </ul>
+</div>

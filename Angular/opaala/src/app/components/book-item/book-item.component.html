@@ -1,0 +1,19 @@
+<div class="book-item">
+    <h2>{{ book.title }}</h2>
+    <p>Author: {{ book.author }}</p>
+    <p>Year: {{ book.year }}</p>
+    <div class="actions">
+      @if(isAddToListEnable){
+        <select [value]="selectedList()" (change)="addToList($event)">
+          <option value="" disabled selected>Add to your list</option>
+          @for (list of availableLists(); track $index) {
+            <option [value]="list.slug">{{ list.name }}</option>
+          }
+        </select>
+      }
+      @if(isDeleteFromListEnable){
+        <button class="delete-button" (click)="removeFromList()">Remove from List</button>
+      }
+    </div>
+  </div>
+  

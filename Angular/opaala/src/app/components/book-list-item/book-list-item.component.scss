@@ -1,0 +1,60 @@
+.book-list-item {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Adjust spacing */
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: #007bff;
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: #0056b3;
+    }
+  }
+
+  .delete-button {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s ease-in-out;
+
+    &:hover {
+      background: #c82333;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: scale(1.02);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1000px) {
+  .book-list-item {
+    padding: 12px;
+    flex-direction: row; /* Keep elements in a row */
+
+    a {
+      font-size: 16px;
+    }
+
+    .delete-button {
+      font-size: 12px;
+      padding: 5px 8px;
+    }
+  }
+}

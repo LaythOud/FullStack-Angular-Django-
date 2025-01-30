@@ -1,0 +1,41 @@
+services:
+  backend:
+    build:
+      context: ./Django
+      dockerfile: docker/Dockerfile
+    container_name: django_backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=True
+
+  frontend:
+    build:
+      context: ./Angular
+      dockerfile: docker/Dockerfile
+    container_name: angular_frontend
+    ports:
+      - "4200:4200"
+    depends_on:
+      - backend
+      
+  django-test:
+    build:
+      context: ./Django
+      dockerfile: docker/Dockerfile
+    container_name: django_test
+    command: ["pytest"]
+
+  django-lint:
+    build:
+      context: ./Django
+      dockerfile: docker/Dockerfile
+    container_name: django_lint
+    command: ["ruff", "check", "."]
+
+  angular-lint:
+    build:
+      context: ./Angular
+      dockerfile: docker/Dockerfile
+    container_name: angular_lint
+    command: ["npm", "run", "lint"]

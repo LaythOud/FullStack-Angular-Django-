@@ -1,0 +1,36 @@
+.toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+  
+  .toast-message {
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    animation: fadeInOut 5s ease-in-out;
+  
+    &.success {
+      background: #28a745;
+    }
+  
+    &.error {
+      background: #dc3545;
+    }
+  
+    &.info {
+      background: #007bff;
+    }
+  }
+  
+  @keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(10px); }
+    10% { opacity: 1; transform: translateY(0); }
+    80% { opacity: 1; }
+    90% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 0; }
+  }
+  

@@ -1,0 +1,10 @@
+<div class="popup-overlay">
+    <div class="popup">
+      <h2>Create a New List</h2>
+      <input type="text" [(ngModel)]="newListName" placeholder="Enter list name">
+      <div class="popup-actions">
+        <button class="create-list" (click)="createList()">Create</button>
+        <button (click)="cancelCreation()">Cancel</button>
+      </div>
+    </div>
+  </div>

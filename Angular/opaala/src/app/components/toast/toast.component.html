@@ -1,0 +1,8 @@
+@if (toastMessage$ | async; as toast) {
+    <div class="toast-container">
+      <div class="toast-message" [class]="toast.type">
+        {{ toast.message }}
+      </div>
+    </div>
+  }
+  

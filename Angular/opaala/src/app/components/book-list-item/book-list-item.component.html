@@ -1,0 +1,4 @@
+<div class="book-list-item">
+  <a [routerLink]="['/lists/', list.slug]">{{ list.name }}</a>
+  <button class="delete-button" (click)="deleteList(list.slug)">✖</button>
+</div>

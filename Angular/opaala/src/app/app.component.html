@@ -1,0 +1,14 @@
+<div class="container">
+  <nav class="sidebar">
+    <ul>
+      <li><a [routerLink]="['/']">Books</a></li>
+      <li><a [routerLink]="['/lists']">Book Lists</a></li>
+    </ul>
+  </nav>
+
+  <div class="content">
+    <app-loading></app-loading>
+    <app-toast></app-toast>
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="book-lists">
+  <h1>My Book Lists</h1>
+  <button class="create-list-button" (click)="navigateToCreateList()">Create New List +</button>
+  
+  @if (isCreatingList) {
+    <app-add-list 
+      (listCreated)="createList($event)" 
+      (cancelForm)="cancelCreation()">
+    </app-add-list>
+  }
+
+  <ul class="book-lists-grid">
+    @for (list of bookLists(); track $index) {
+      <li>
+        <app-book-list-item (remove)="remove($event,list)" [list]="list"></app-book-list-item>
+      </li>
+    }
+  </ul>
+</div>
