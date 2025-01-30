@@ -29,8 +29,15 @@ describe('Book Lists E2E Tests', () => {
 
     it('Should delete a book list', () => {
         cy.visit('/lists');
-        cy.contains('My Test List').parent().find('.delete-button').click();
-        cy.get('.book-list-item').should('not.exist');
+        cy.get('.book-list-item') 
+        .contains('My Test List') 
+        .parents('.book-list-item') 
+        .within(() => {
+          cy.get('.delete-button').click();
+        });
+      
+     
+      cy.get('.book-list-item').contains('My Test List').should('not.exist');
       });
   });
   
